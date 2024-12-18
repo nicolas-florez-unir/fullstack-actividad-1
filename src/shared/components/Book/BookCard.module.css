@@ -1,0 +1,8 @@
+.imageCover {
+    padding: 1rem;
+    transition: padding 0.2s ease;
+}
+
+.imageCover:hover{
+    padding: 0.5rem;
+}
