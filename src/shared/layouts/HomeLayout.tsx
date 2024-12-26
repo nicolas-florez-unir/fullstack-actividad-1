@@ -1,6 +1,6 @@
-import { Outlet } from "react-router";
+import { Outlet } from 'react-router';
 
-import { NavBar } from "@shared/components";
+import { NavBar } from '@shared/components';
 
 export default function HomeLayout() {
   return (

@@ -1,6 +1,6 @@
-import { BookEntity } from "@modules/books/domain/entities";
-import BookHorizontalCard from "@shared/components/Book/BookHorizontalCard";
-import QuantityInput from "@shared/components/QuantityInput";
+import { BookEntity } from '@modules/books/domain/entities';
+import BookHorizontalCard from '@shared/components/Book/BookHorizontalCard';
+import QuantityInput from '@shared/components/QuantityInput';
 import { useCartContext } from '../../application/hooks/useCartContext';
 
 interface CardItemCardProps {

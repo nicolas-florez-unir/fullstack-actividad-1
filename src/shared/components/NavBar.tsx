@@ -1,22 +1,22 @@
-import { useSpring, animated } from "@react-spring/web";
-import { MdShoppingCart, MdSearch } from "react-icons/md";
+import { useSpring, animated } from '@react-spring/web';
+import { MdShoppingCart, MdSearch } from 'react-icons/md';
 
-import CartDropdown from "@modules/cart/infrastructure/ui/CartDropdown";
-import { useEffect, useState } from "react";
-import { useCartContext } from "@modules/cart/application/hooks/useCartContext";
-import DebounceInput from "./DebounceInput";
-import { findByNameUseCase } from "@modules/books/infrastructure";
-import { BookEntity } from "@modules/books/domain/entities";
-import SearchResultDropdown from "./Search/SearchResultDropdown";
-import ClickAwayComponent from "./ClickAwayComponent";
+import CartDropdown from '@modules/cart/infrastructure/ui/CartDropdown';
+import { useEffect, useState } from 'react';
+import { useCartContext } from '@modules/cart/application/hooks/useCartContext';
+import DebounceInput from './DebounceInput';
+import { findByNameUseCase } from '@modules/books/infrastructure';
+import { BookEntity } from '@modules/books/domain/entities';
+import SearchResultDropdown from './Search/SearchResultDropdown';
+import ClickAwayComponent from './ClickAwayComponent';
 
 const SearchBook = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [foundBooks, setFoundBooks] = useState<BookEntity[]>([]);
   const [resultVisible, setResultVisible] = useState(false);
 
   useEffect(() => {
-    if (searchQuery.trim() === "") {
+    if (searchQuery.trim() === '') {
       setResultVisible(false);
       return;
     }
@@ -68,7 +68,7 @@ const SeeCart = () => {
         {
           width: 24,
           height: 24,
-        }
+        },
       ],
     });
   }, [api, cart]);
@@ -88,10 +88,10 @@ const SeeCart = () => {
 
         {cartTotalQuantity > 0 && (
           <animated.div
-            style={{...springs}}
+            style={{ ...springs }}
             className="absolute -top-3 -right-2 bg-violet-600 dark:bg-violet-500 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center"
           >
-            {cartTotalQuantity > 9 ? "+9" : cartTotalQuantity}
+            {cartTotalQuantity > 9 ? '+9' : cartTotalQuantity}
           </animated.div>
         )}
       </div>

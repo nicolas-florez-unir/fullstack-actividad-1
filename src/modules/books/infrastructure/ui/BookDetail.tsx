@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { BookEntity } from "../../domain/entities/book.entity";
-import { findByIdUseCase } from "../providers/use-case.provider";
-import { useCartContext } from "@modules/cart/application/hooks/useCartContext";
-import { MdAddShoppingCart } from "react-icons/md";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { BookEntity } from '../../domain/entities/book.entity';
+import { findByIdUseCase } from '../providers/use-case.provider';
+import { useCartContext } from '@modules/cart/application/hooks/useCartContext';
+import { MdAddShoppingCart } from 'react-icons/md';
 
 const BookDetail = () => {
   const [book, setBook] = useState<BookEntity | null>(null);

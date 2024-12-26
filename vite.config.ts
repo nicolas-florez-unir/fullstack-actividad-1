@@ -15,4 +15,4 @@ export default defineConfig({
     } as AliasOptions,
   },
   plugins: [react()],
-})
+});

@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router";
-import { MdShoppingCartCheckout } from "react-icons/md";
-import { useSpring, animated } from "@react-spring/web";
+import { useNavigate } from 'react-router';
+import { MdShoppingCartCheckout } from 'react-icons/md';
+import { useSpring, animated } from '@react-spring/web';
 
-import { Routes } from "@routes/index";
-import CartItemCard from "./CartItemCard";
-import { CartItem } from "@modules/cart/domain/cart-item.entity";
-import { useEffect } from "react";
+import { Routes } from '@routes/index';
+import CartItemCard from './CartItemCard';
+import { CartItem } from '@modules/cart/domain/cart-item.entity';
+import { useEffect } from 'react';
 
 interface CartDropdownProps {
   onGoToCheckout: () => void;
@@ -50,7 +50,7 @@ export default function CartDropdown({
       </h3>
       <ul
         className="space-y-2 max-h-96 overflow-auto"
-        style={{ scrollbarGutter: "stable" }}
+        style={{ scrollbarGutter: 'stable' }}
       >
         {cartItems.length === 0 ? (
           <li className="text-gray-500 mt-2">Tu carrito está vacío</li>

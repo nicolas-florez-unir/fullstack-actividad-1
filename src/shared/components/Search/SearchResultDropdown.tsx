@@ -1,5 +1,5 @@
-import { BookEntity } from "@modules/books/domain/entities";
-import BookHorizontalCard from "../Book/BookHorizontalCard";
+import { BookEntity } from '@modules/books/domain/entities';
+import BookHorizontalCard from '../Book/BookHorizontalCard';
 
 interface SearchResultDropdownProps {
   books: BookEntity[];
@@ -32,11 +32,16 @@ export default function SearchResultDropdown(props: SearchResultDropdownProps) {
       </h3>
       <ul
         className="space-y-2 max-h-96 overflow-auto"
-        style={{ scrollbarGutter: "stable" }}
+        style={{ scrollbarGutter: 'stable' }}
       >
         <div className="py-4 space-y-4">
           {props.books.map((book, i) => (
-            <BookHorizontalCard book={book} key={i} className="cursor-pointer" onClick={() => console.log("click")} />
+            <BookHorizontalCard
+              book={book}
+              key={i}
+              className="cursor-pointer"
+              onClick={() => console.log('click')}
+            />
           ))}
         </div>
       </ul>

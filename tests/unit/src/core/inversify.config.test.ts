@@ -7,29 +7,29 @@ import { FindByIdUseCase } from '@modules/books/application/use-cases/findById.u
 import { FindByNameUseCase } from '@modules/books/application/use-cases/findByName.use-case';
 
 describe('InversifyConfig', () => {
-    let config: typeof inversifyConfig;
+  let config: typeof inversifyConfig;
 
-    beforeEach(() => {
-        config = new (inversifyConfig.constructor)();
-    });
+  beforeEach(() => {
+    config = new inversifyConfig.constructor();
+  });
 
-    it('should bind BookRepository to InMemoryBookRepository', () => {
-        const repository = config.getFromContainer(BookRepository);
-        expect(repository).toBeInstanceOf(InMemoryBookRepository);
-    });
+  it('should bind BookRepository to InMemoryBookRepository', () => {
+    const repository = config.getFromContainer(BookRepository);
+    expect(repository).toBeInstanceOf(InMemoryBookRepository);
+  });
 
-    it('should bind GetAllBooksUseCase to self', () => {
-        const useCase = config.getFromContainer(GetAllBooksUseCase);
-        expect(useCase).toBeInstanceOf(GetAllBooksUseCase);
-    });
+  it('should bind GetAllBooksUseCase to self', () => {
+    const useCase = config.getFromContainer(GetAllBooksUseCase);
+    expect(useCase).toBeInstanceOf(GetAllBooksUseCase);
+  });
 
-    it('should bind FindByIdUseCase to self', () => {
-        const useCase = config.getFromContainer(FindByIdUseCase);
-        expect(useCase).toBeInstanceOf(FindByIdUseCase);
-    });
+  it('should bind FindByIdUseCase to self', () => {
+    const useCase = config.getFromContainer(FindByIdUseCase);
+    expect(useCase).toBeInstanceOf(FindByIdUseCase);
+  });
 
-    it('should bind FindByNameUseCase to self', () => {
-        const useCase = config.getFromContainer(FindByNameUseCase);
-        expect(useCase).toBeInstanceOf(FindByNameUseCase);
-    });
+  it('should bind FindByNameUseCase to self', () => {
+    const useCase = config.getFromContainer(FindByNameUseCase);
+    expect(useCase).toBeInstanceOf(FindByNameUseCase);
+  });
 });

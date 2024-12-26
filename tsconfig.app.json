@@ -29,7 +29,7 @@
       "@books/*": ["./src/modules/books/*"],
       "@cart/*": ["./src/modules/cart/*"],
       "@routes/*": ["./src/routes/*"],
-      "@core/*": ["./src/core/*"],
+      "@core/*": ["./src/core/*"]
     }
   },
   "include": ["src", "tests"]

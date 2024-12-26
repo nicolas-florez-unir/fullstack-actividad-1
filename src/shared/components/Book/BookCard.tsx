@@ -1,11 +1,11 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import React from 'react';
+import { useNavigate } from 'react-router';
 
-import { BookEntity } from "@books/domain/entities/book.entity";
-import { useCartContext } from "@cart/application/hooks/useCartContext";
-import { Routes } from "@routes/index";
-import { MdAddShoppingCart } from "react-icons/md";
-import styles from "./BookCard.module.css";
+import { BookEntity } from '@books/domain/entities/book.entity';
+import { useCartContext } from '@cart/application/hooks/useCartContext';
+import { Routes } from '@routes/index';
+import { MdAddShoppingCart } from 'react-icons/md';
+import styles from './BookCard.module.css';
 
 interface BookCardProps {
   book: BookEntity;
@@ -22,14 +22,17 @@ const BookCard: React.FC<BookCardProps> = ({ book, showBuyButton = true }) => {
 
   const handleBookClick = () => {
     navigate(`${Routes.BookDetail}${book.getId()}`);
-  }
+  };
 
   return (
     <div
       key={book.getId()}
       className="bg-white shadow-lg rounded-xl overflow-hidden dark:bg-neutral-800"
     >
-      <div className="coverContainer relative hover:cursor-pointer" onClick={handleBookClick}>
+      <div
+        className="coverContainer relative hover:cursor-pointer"
+        onClick={handleBookClick}
+      >
         <img
           src={book.getImageUrl()}
           className="bg-red-300 h-80 w-full relative blur-lg"

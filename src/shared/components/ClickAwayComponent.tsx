@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 interface ClickAwayComponentProps {
   children: React.ReactNode;
@@ -28,9 +28,9 @@ export default function ClickAwayComponent({
         onClickAway();
       }
     };
-    document.addEventListener("mousedown", handleClick);
+    document.addEventListener('mousedown', handleClick);
     return () => {
-      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener('mousedown', handleClick);
     };
   }, [onClickAway]);
 

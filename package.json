@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test:unit": "npx vitest --config vitest.unit.config.ts --coverage --no-watch",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",

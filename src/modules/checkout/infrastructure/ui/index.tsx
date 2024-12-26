@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
-import { useCartContext } from "@cart/application/hooks/useCartContext";
-import CardItemCard from "@modules/cart/infrastructure/ui/CartItemCard";
-import { Routes } from "@routes/index";
+import { useCartContext } from '@cart/application/hooks/useCartContext';
+import CardItemCard from '@modules/cart/infrastructure/ui/CartItemCard';
+import { Routes } from '@routes/index';
 
 export default function Checkout() {
   const { cart } = useCartContext();
@@ -31,7 +31,7 @@ export default function Checkout() {
         </button>
         <button
           className="bg-green-600 text-white py-2 px-4 rounded-full w-full ml-2"
-          onClick={() => console.log("Pagando")}
+          onClick={() => console.log('Pagando')}
         >
           Realizar Pago
         </button>

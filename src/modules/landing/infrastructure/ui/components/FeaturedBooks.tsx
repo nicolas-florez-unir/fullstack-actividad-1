@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { getAllBooksUseCase } from "@modules/books/infrastructure";
-import { BookEntity } from "@books/domain/entities/book.entity";
-import BookCard from "@shared/components/Book/BookCard";
+import { useEffect, useState } from 'react';
+import { getAllBooksUseCase } from '@modules/books/infrastructure';
+import { BookEntity } from '@books/domain/entities/book.entity';
+import BookCard from '@shared/components/Book/BookCard';
 
 const FeaturedBooks = () => {
   const [books, setBooks] = useState<BookEntity[]>([]);

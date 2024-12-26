@@ -1,5 +1,5 @@
-import { NavLink } from "react-router";
-import { Routes } from "@routes";
+import { NavLink } from 'react-router';
+import { Routes } from '@routes';
 
 const NavBar = () => {
   return (

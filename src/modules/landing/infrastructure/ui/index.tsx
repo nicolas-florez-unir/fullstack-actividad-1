@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
-import FeaturedBooks from "./components/FeaturedBooks";
-import Footer from "./components/Footer";
-import HeroSection from "./components/Hero";
-import NavBar from "./components/Navbar";
-import { Routes } from "@routes/index";
+import FeaturedBooks from './components/FeaturedBooks';
+import Footer from './components/Footer';
+import HeroSection from './components/Hero';
+import NavBar from './components/Navbar';
+import { Routes } from '@routes/index';
 
 const TIMEOUT_MS = 5000;
 

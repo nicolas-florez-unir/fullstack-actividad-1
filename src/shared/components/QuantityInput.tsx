@@ -9,7 +9,7 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
   value,
   onIncrease,
   onDecrease,
-  classname = "",
+  classname = '',
 }) => {
   return (
     <div className={classname}>
