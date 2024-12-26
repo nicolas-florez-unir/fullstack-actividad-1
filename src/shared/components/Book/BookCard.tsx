@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { useNavigate } from "react-router";
 
 import { BookEntity } from "@books/domain/entities/book.entity";
 import { useCartContext } from "@cart/application/hooks/useCartContext";
@@ -14,17 +14,22 @@ interface BookCardProps {
 
 const BookCard: React.FC<BookCardProps> = ({ book, showBuyButton = true }) => {
   const cartContext = useCartContext();
+  const navigate = useNavigate();
 
   const handleAddToCart = (book: BookEntity) => {
     cartContext.addToCart(book);
   };
+
+  const handleBookClick = () => {
+    navigate(`${Routes.BookDetail}${book.getId()}`);
+  }
 
   return (
     <div
       key={book.getId()}
       className="bg-white shadow-lg rounded-xl overflow-hidden dark:bg-neutral-800"
     >
-      <div className="coverContainer relative hover:cursor-pointer">
+      <div className="coverContainer relative hover:cursor-pointer" onClick={handleBookClick}>
         <img
           src={book.getImageUrl()}
           className="bg-red-300 h-80 w-full relative blur-lg"
@@ -46,16 +51,6 @@ const BookCard: React.FC<BookCardProps> = ({ book, showBuyButton = true }) => {
           </p>
         </div>
         <div className="flex justify-between gap-4 mt-4">
-          {/* <NavLink
-            to={`${Routes.BookDetail}${book.getId()}`}
-            onClick={() => handleAddToCart(book)}
-            className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-full p-2"
-          >
-            <span className="flex gap-2">
-              <MdRemoveRedEye size={24} />
-              Detalles
-            </span>
-          </NavLink> */}
           {showBuyButton && (
             <button
               onClick={() => handleAddToCart(book)}

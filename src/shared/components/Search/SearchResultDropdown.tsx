@@ -26,8 +26,8 @@ export default function SearchResultDropdown(props: SearchResultDropdownProps) {
   }
 
   return (
-    <div className="absolute right-0 mt-2 w-96 bg-white shadow-lg rounded-md p-4 z-10">
-      <h3 className="font-semibold text-gray-800 border-b-2 border-slate-200 pb-1">
+    <div className="absolute right-0 mt-2 w-96 bg-white dark:bg-neutral-800 shadow-lg rounded-md p-4 z-10">
+      <h3 className="font-semibold text-gray-800 dark:text-white border-b-2 border-slate-200 pb-1">
         Resultados de la Búsqueda
       </h3>
       <ul

@@ -1,5 +1,5 @@
-import { BookRepository } from "@modules/books/domain/repositories/book.repository";
 import { Container, interfaces } from "inversify";
+import { BookRepository } from "@modules/books/domain/repositories/book.repository";
 import { InMemoryBookRepository } from "@books/infrastructure/repositories/in-memory-book.repository";
 import { GetAllBooksUseCase } from "@modules/books/application/use-cases/getAllBook.use-case";
 import { FindByIdUseCase } from "@modules/books/application/use-cases/findById.use-case";

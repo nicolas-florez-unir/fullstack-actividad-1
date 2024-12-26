@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router";
+import { MdShoppingCartCheckout } from "react-icons/md";
+import { useSpring, animated } from "@react-spring/web";
+
 import { Routes } from "@routes/index";
 import CartItemCard from "./CartItemCard";
-import { CartItem } from "../domain/cart-item.entity";
-import { MdShoppingCartCheckout } from "react-icons/md";
+import { CartItem } from "@modules/cart/domain/cart-item.entity";
+import { useEffect } from "react";
 
 interface CartDropdownProps {
   onGoToCheckout: () => void;
@@ -14,6 +17,23 @@ export default function CartDropdown({
   cartItems,
 }: CartDropdownProps) {
   const navigate = useNavigate();
+  const [springs, api] = useSpring(() => ({
+    from: { y: 0, opacity: 0 },
+    config: { duration: 150 },
+  }));
+
+  useEffect(() => {
+    api.start({
+      from: {
+        y: 0,
+        opacity: 0,
+      },
+      to: {
+        y: 10,
+        opacity: 1,
+      },
+    });
+  }, [api]);
 
   const handleGoToCheckout = () => {
     navigate(Routes.Checkout);
@@ -21,7 +41,10 @@ export default function CartDropdown({
   };
 
   return (
-    <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white dark:bg-neutral-800 shadow-lg rounded-md p-4 z-10">
+    <animated.div
+      style={{ ...springs }}
+      className="absolute right-0 mt-2 w-80 sm:w-96 bg-white dark:bg-neutral-800 shadow-lg rounded-md p-4 z-10"
+    >
       <h3 className="font-semibold text-gray-800 dark:text-white border-b-2 border-slate-200 pb-1">
         Carrito de Compras
       </h3>
@@ -61,6 +84,6 @@ export default function CartDropdown({
           </div>
         </>
       )}
-    </div>
+    </animated.div>
   );
 }

@@ -1,3 +1,6 @@
+import { useSpring, animated } from "@react-spring/web";
+import { MdShoppingCart, MdSearch } from "react-icons/md";
+
 import CartDropdown from "@modules/cart/infrastructure/ui/CartDropdown";
 import { useEffect, useState } from "react";
 import { useCartContext } from "@modules/cart/application/hooks/useCartContext";
@@ -6,7 +9,6 @@ import { findByNameUseCase } from "@modules/books/infrastructure";
 import { BookEntity } from "@modules/books/domain/entities";
 import SearchResultDropdown from "./Search/SearchResultDropdown";
 import ClickAwayComponent from "./ClickAwayComponent";
-import { MdShoppingCart, MdSearch } from "react-icons/md";
 
 const SearchBook = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -51,6 +53,25 @@ const SeeCart = () => {
   const [cartVisible, setCartVisible] = useState(false);
   const { cart } = useCartContext();
   const cartTotalQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+  const [springs, api] = useSpring(() => ({
+    from: { width: 24, height: 24 },
+    config: { duration: 100 },
+  }));
+
+  useEffect(() => {
+    api.start({
+      to: [
+        {
+          width: 28,
+          height: 28,
+        },
+        {
+          width: 24,
+          height: 24,
+        }
+      ],
+    });
+  }, [api, cart]);
 
   return (
     <ClickAwayComponent
@@ -66,9 +87,12 @@ const SeeCart = () => {
         </button>
 
         {cartTotalQuantity > 0 && (
-          <div className="absolute -top-3 -right-2 bg-violet-600 dark:bg-violet-500 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center">
+          <animated.div
+            style={{...springs}}
+            className="absolute -top-3 -right-2 bg-violet-600 dark:bg-violet-500 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center"
+          >
             {cartTotalQuantity > 9 ? "+9" : cartTotalQuantity}
-          </div>
+          </animated.div>
         )}
       </div>
 
@@ -109,7 +133,7 @@ const NavBar = () => {
 
         {/* Toggle the search input */}
         {isSearchVisible && <SearchBook />}
-        
+
         <SeeCart />
       </div>
     </nav>

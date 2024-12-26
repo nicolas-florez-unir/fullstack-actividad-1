@@ -11,6 +11,7 @@
     "test:unit": "npx vitest --config vitest.unit.config.ts --coverage --no-watch"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.5",
     "inversify": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
