@@ -33,9 +33,7 @@ class MockBookRepository implements BookRepository {
   }
 
   async findByName(name: string): Promise<BookEntity[]> {
-    return books.filter((book) =>
-      book.getName().toLowerCase().includes(name)
-    );
+    return books.filter((book) => book.getName().toLowerCase().includes(name));
   }
 
   findById(): Promise<BookEntity | null> {
