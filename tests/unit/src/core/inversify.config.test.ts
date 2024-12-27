@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import inversifyConfig from '@core/inversify.config';
+import { InversifyConfig } from '@core/inversify.config';
 import { BookRepository } from '@modules/books/domain/repositories/book.repository';
 import { InMemoryBookRepository } from '@books/infrastructure/repositories/in-memory-book.repository';
 import { GetAllBooksUseCase } from '@modules/books/application/use-cases/getAllBook.use-case';
@@ -7,10 +7,10 @@ import { FindByIdUseCase } from '@modules/books/application/use-cases/findById.u
 import { FindByNameUseCase } from '@modules/books/application/use-cases/findByName.use-case';
 
 describe('InversifyConfig', () => {
-  let config: typeof inversifyConfig;
+  let config: InversifyConfig;
 
   beforeEach(() => {
-    config = new inversifyConfig.constructor();
+    config = new InversifyConfig();
   });
 
   it('should bind BookRepository to InMemoryBookRepository', () => {

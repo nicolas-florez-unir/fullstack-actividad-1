@@ -16,7 +16,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        run: npm install 
+        run: npm install
       - name: Run unit tests
         run: npm run test:unit
       - name: Install Netlify

@@ -5,7 +5,7 @@ import { GetAllBooksUseCase } from '@modules/books/application/use-cases/getAllB
 import { FindByIdUseCase } from '@modules/books/application/use-cases/findById.use-case';
 import { FindByNameUseCase } from '@modules/books/application/use-cases/findByName.use-case';
 
-class InversifyConfig {
+export class InversifyConfig {
   private readonly container: Container = new Container();
 
   constructor() {
