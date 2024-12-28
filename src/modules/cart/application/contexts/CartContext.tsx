@@ -7,10 +7,12 @@ interface CardContextType {
   cart: CartItem[];
   addToCart: (book: BookEntity) => void;
   removeFromCart: (book: BookEntity) => void;
+  clearCart: () => void;
 }
 
 export const CartContext = React.createContext<CardContextType>({
   cart: [],
   addToCart: () => {},
   removeFromCart: () => {},
+  clearCart: () => {},
 });

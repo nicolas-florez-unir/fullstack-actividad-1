@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import FeaturedBooks from './components/FeaturedBooks';
 import Footer from './components/Footer';
 import HeroSection from './components/Hero';
-import NavBar from './components/Navbar';
+import PublicNavBar from './components/PublicNavbar';
 import { Routes } from '@routes/index';
 
 const TIMEOUT_MS = 5000;
@@ -22,7 +22,7 @@ export default function Landing() {
 
   return (
     <div>
-      <NavBar />
+      <PublicNavBar />
       <HeroSection />
       <FeaturedBooks />
       <Footer />

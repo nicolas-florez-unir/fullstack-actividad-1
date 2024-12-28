@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { MdShoppingCartCheckout } from 'react-icons/md';
+import { MdDelete, MdShoppingCartCheckout } from 'react-icons/md';
 import { useSpring, animated } from '@react-spring/web';
 
 import { Routes } from '@routes/index';
@@ -9,12 +9,14 @@ import { useEffect } from 'react';
 
 interface CartDropdownProps {
   onGoToCheckout: () => void;
+  onDeleteClick: () => void;
   cartItems: CartItem[];
 }
 
 export default function CartDropdown({
   onGoToCheckout,
   cartItems,
+  onDeleteClick,
 }: CartDropdownProps) {
   const navigate = useNavigate();
   const [springs, api] = useSpring(() => ({
@@ -75,12 +77,20 @@ export default function CartDropdown({
                 .toFixed(2)}
             </span>
           </div>
-          <div
-            onClick={handleGoToCheckout}
-            className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full mt-4 flex items-center justify-center gap-2 text-center cursor-pointer"
-          >
-            <MdShoppingCartCheckout size={21} />
-            Pagar
+          <div className="flex gap-2 mt-2">
+            <button
+              className="bg-red-500 rounded-full w-1/5 justify-items-center"
+              onClick={() => onDeleteClick()}
+            >
+              <MdDelete size={21} color="white" />
+            </button>
+            <div
+              onClick={handleGoToCheckout}
+              className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center gap-2 text-center cursor-pointer"
+            >
+              <MdShoppingCartCheckout size={21} />
+              Pagar
+            </div>
           </div>
         </>
       )}

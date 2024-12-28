@@ -43,77 +43,77 @@ export class InMemoryBookRepository extends BookRepository {
       'Pride and Prejudice',
       'Jane Austen',
       6.99,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://cdn2.penguin.com.au/covers/400/9780241735923.jpg'
     ),
     new BookEntity(
       7,
       'The Catcher in the Rye',
       'J.D. Salinger',
       8.49,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://npr.brightspotcdn.com/dims4/default/f735808/2147483647/strip/true/crop/363x574+0+0/resize/880x1392!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwkar%2Ffiles%2Fcatcher_in_the_rye_cover.png'
     ),
     new BookEntity(
       8,
       'Brave New World',
       'Aldous Huxley',
       10.49,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://images.cdn2.buscalibre.com/fit-in/520x520/39/b9/655e3488405a63dde352f847757d07f3.jpg'
     ),
     new BookEntity(
       9,
       'Crime and Punishment',
       'Fyodor Dostoevsky',
       11.99,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://images.cdn3.buscalibre.com/fit-in/360x360/55/27/5527f9efda8f1efe32107609c1117ca8.jpg'
     ),
     new BookEntity(
       10,
       'The Hobbit',
       'J.R.R. Tolkien',
       8.99,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TsNtVHWetvYCauF7l0CxFMqkiRN6rHUyNA&s'
     ),
     new BookEntity(
       11,
       'The Odyssey',
       'Homer',
       7.49,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://images.cdn2.buscalibre.com/fit-in/360x360/48/40/4840a88401bb83c5e2c38a7c9356dec0.jpg'
     ),
     new BookEntity(
       12,
       'Catch-22',
       'Joseph Heller',
       10.99,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://upload.wikimedia.org/wikipedia/commons/8/80/Catch-22_%281961%29_front_cover%2C_first_edition.jpg'
     ),
     new BookEntity(
       13,
       'Fahrenheit 451',
       'Ray Bradbury',
       9.49,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://images.cdn1.buscalibre.com/fit-in/360x360/39/0c/390cf389c0c83ef393d8a0b763e856c0.jpg'
     ),
     new BookEntity(
       14,
       'The Picture of Dorian Gray',
       'Oscar Wilde',
       8.99,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://images.cdn3.buscalibre.com/fit-in/360x360/5a/20/5a20370796728f8665390d2519e6e115.jpg'
     ),
     new BookEntity(
       15,
       'The Brothers Karamazov',
       'Fyodor Dostoevsky',
       13.49,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://images.cdn2.buscalibre.com/fit-in/360x360/c2/a9/c2a9d765ec6ff8e5a5976a35a192bd43.jpg'
     ),
     new BookEntity(
       16,
       'Anna Karenina',
       'Leo Tolstoy',
       11.99,
-      'https://dummyimage.com/310x385/29408c/fff'
+      'https://canonpress.com/cdn/shop/products/canon-classics-books-anna-karenina-worldview-edition-28066903949360.jpg?v=1616165914'
     ),
     new BookEntity(
       17,

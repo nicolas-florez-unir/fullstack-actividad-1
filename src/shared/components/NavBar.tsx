@@ -9,11 +9,14 @@ import { findByNameUseCase } from '@modules/books/infrastructure';
 import { BookEntity } from '@modules/books/domain/entities';
 import SearchResultDropdown from './Search/SearchResultDropdown';
 import ClickAwayComponent from './ClickAwayComponent';
+import { useNavigate } from 'react-router';
+import { Routes } from '@routes/index';
 
 const SearchBook = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [foundBooks, setFoundBooks] = useState<BookEntity[]>([]);
   const [resultVisible, setResultVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (searchQuery.trim() === '') {
@@ -30,6 +33,11 @@ const SearchBook = () => {
     find(searchQuery);
   }, [searchQuery]);
 
+  const handleResultClick = (book: BookEntity) => {
+    navigate(Routes.BookDetail + book.getId());
+    setResultVisible(false);
+  }
+
   return (
     <ClickAwayComponent
       className="relative"
@@ -43,7 +51,7 @@ const SearchBook = () => {
           placeholder="Buscar..."
         />
 
-        {resultVisible && <SearchResultDropdown books={foundBooks} />}
+        {resultVisible && <SearchResultDropdown books={foundBooks} onResultClick={handleResultClick} />}
       </div>
     </ClickAwayComponent>
   );
@@ -51,7 +59,7 @@ const SearchBook = () => {
 
 const SeeCart = () => {
   const [cartVisible, setCartVisible] = useState(false);
-  const { cart } = useCartContext();
+  const { cart, clearCart } = useCartContext();
   const cartTotalQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0);
   const [springs, api] = useSpring(() => ({
     from: { width: 24, height: 24 },
@@ -98,6 +106,7 @@ const SeeCart = () => {
 
       {cartVisible && (
         <CartDropdown
+          onDeleteClick={() => clearCart()}
           onGoToCheckout={() => setCartVisible(false)}
           cartItems={cart}
         />
@@ -107,23 +116,24 @@ const SeeCart = () => {
 };
 
 const NavBar = () => {
-  const [isSearchVisible, setIsSearchVisible] = useState(false); // state to toggle search input
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <nav className="px-4 py-4 flex justify-between items-center border-b-2 border-b-violet-600 dark:border-b-violet-500 md:px-24 md:py-6">
-      <div className="text-xl font-bold text-violet-600 dark:text-violet-500 md:text-2xl">
+    <nav className="bg-white dark:bg-neutral-900 px-4 py-4 flex justify-between items-center border-b-2 border-b-violet-600 dark:border-b-violet-500 md:px-24 md:py-6 sticky top-0 z-50">
+      <div
+        className="text-xl font-bold text-violet-600 dark:text-violet-500 md:text-2xl cursor-pointer"
+        onClick={() => navigate(Routes.Home)}
+      >
         Relatos de papel
       </div>
 
-      {/* Desktop only, responsive layout */}
       <div className="hidden md:flex items-center space-x-2 md:space-x-4">
         <SearchBook />
         <SeeCart />
       </div>
 
-      {/* Mobile view: Hamburger and search input */}
       <div className="flex md:hidden items-center space-x-4">
-        {/* Button to toggle search input */}
         <button
           onClick={() => setIsSearchVisible(!isSearchVisible)}
           className="bg-violet-600 dark:bg-violet-500 text-white p-2 rounded-full"
@@ -131,7 +141,6 @@ const NavBar = () => {
           <MdSearch size={24} />
         </button>
 
-        {/* Toggle the search input */}
         {isSearchVisible && <SearchBook />}
 
         <SeeCart />

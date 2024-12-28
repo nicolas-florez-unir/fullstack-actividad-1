@@ -35,7 +35,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, showBuyButton = true }) => {
       >
         <img
           src={book.getImageUrl()}
-          className="bg-red-300 h-80 w-full relative blur-lg"
+          className="bg-gray-500-300 h-80 w-full relative blur-lg"
         />
         <img
           src={book.getImageUrl()}

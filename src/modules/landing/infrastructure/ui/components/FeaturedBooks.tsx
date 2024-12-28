@@ -7,7 +7,7 @@ const FeaturedBooks = () => {
   const [books, setBooks] = useState<BookEntity[]>([]);
 
   useEffect(() => {
-    getAllBooksUseCase.execute().then((books) => setBooks(books.slice(0, 3)));
+    getAllBooksUseCase.execute().then((books) => setBooks(books.slice(0, 6)));
   }, []);
 
   return (

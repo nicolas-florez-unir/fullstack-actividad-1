@@ -3,6 +3,7 @@ import BookHorizontalCard from '../Book/BookHorizontalCard';
 
 interface SearchResultDropdownProps {
   books: BookEntity[];
+  onResultClick: (book: BookEntity) => void;
 }
 
 function EmptyResult() {
@@ -21,6 +22,7 @@ function EmptyResult() {
 }
 
 export default function SearchResultDropdown(props: SearchResultDropdownProps) {
+
   if (props.books.length === 0) {
     return <EmptyResult />;
   }
@@ -40,7 +42,7 @@ export default function SearchResultDropdown(props: SearchResultDropdownProps) {
               book={book}
               key={i}
               className="cursor-pointer"
-              onClick={() => console.log('click')}
+              onClick={() => props.onResultClick(book)}
             />
           ))}
         </div>
