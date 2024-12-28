@@ -22,7 +22,6 @@ function EmptyResult() {
 }
 
 export default function SearchResultDropdown(props: SearchResultDropdownProps) {
-
   if (props.books.length === 0) {
     return <EmptyResult />;
   }

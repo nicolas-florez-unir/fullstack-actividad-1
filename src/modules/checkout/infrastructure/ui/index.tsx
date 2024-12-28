@@ -26,7 +26,7 @@ export default function Checkout() {
   const handlePaymentConfirmation = () => {
     clearCart();
     setShowConfirmationModal(false);
-  }
+  };
 
   return (
     <div>
@@ -52,7 +52,10 @@ export default function Checkout() {
 
       {showConfirmationModal &&
         createPortal(
-          <animated.div style={fade} className="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[9999] flex justify-center items-center">
+          <animated.div
+            style={fade}
+            className="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[9999] flex justify-center items-center"
+          >
             <CheckoutConfirmationModal
               isOpen
               onConfirm={handlePaymentConfirmation}

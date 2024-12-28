@@ -36,7 +36,7 @@ const SearchBook = () => {
   const handleResultClick = (book: BookEntity) => {
     navigate(Routes.BookDetail + book.getId());
     setResultVisible(false);
-  }
+  };
 
   return (
     <ClickAwayComponent
@@ -51,7 +51,12 @@ const SearchBook = () => {
           placeholder="Buscar..."
         />
 
-        {resultVisible && <SearchResultDropdown books={foundBooks} onResultClick={handleResultClick} />}
+        {resultVisible && (
+          <SearchResultDropdown
+            books={foundBooks}
+            onResultClick={handleResultClick}
+          />
+        )}
       </div>
     </ClickAwayComponent>
   );
